@@ -9,6 +9,7 @@ export default function TextForm(props) {
         // console.log("Button was clicked" + text);
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert && props.showAlert("Converted to Uppercase!", "success");
         
     }
 
@@ -44,7 +45,7 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className="container">
+    <div className="container" data-bs-theme={props.mode}>
       <h1>{props.heading}</h1>
       <div className="form-field mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
